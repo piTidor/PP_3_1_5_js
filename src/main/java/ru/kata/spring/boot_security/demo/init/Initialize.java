@@ -23,33 +23,33 @@ public class Initialize {
     }
 
 
-    @PostConstruct
-    public void postConstruct(){
-        Role adminRole = new Role();
-        adminRole.setId(1L);
-        adminRole.setRole("ROLE_ADMIN");
-        Role userRole = new Role();
-        userRole.setId(2L);
-        userRole.setRole("ROLE_USER");
-        roleRepository.saveAll(List.of(adminRole, userRole));
-
-        User admin = new User();
-        admin.setName("admin");
-        admin.setLastName("admin");
-        admin.setAge(1);
-        admin.setEmail("admin@mail.com");
-        admin.setPassword(passwordEncoder.encode("admin"));
-        admin.addRole(adminRole);
-
-        User user = new User();
-        user.setName("user");
-        user.setLastName("user");
-        user.setAge(2);
-        user.setEmail("user@mail.com");
-        user.setPassword(passwordEncoder.encode("user"));
-        user.addRole(userRole);
-
-        userRepository.save(admin);
-        userRepository.save(user);
-    }
+//    @PostConstruct
+//    public void postConstruct(){
+//        Role adminRole = new Role();
+//        adminRole.setId(1L);
+//        adminRole.setRole("ROLE_ADMIN");
+//        Role userRole = new Role();
+//        userRole.setId(2L);
+//        userRole.setRole("ROLE_USER");
+//        roleRepository.saveAll(List.of(adminRole, userRole));
+//
+//        User admin = new User();
+//        admin.setName("admin");
+//        admin.setLastName("admin");
+//        admin.setAge(1);
+//        admin.setEmail("admin@mail.com");
+//        admin.setPassword(passwordEncoder.encode("admin"));
+//        admin.addRole(adminRole);
+//
+//        User user = new User();
+//        user.setName("user");
+//        user.setLastName("user");
+//        user.setAge(2);
+//        user.setEmail("user@mail.com");
+//        user.setPassword(passwordEncoder.encode("user"));
+//        user.addRole(userRole);
+//
+//        userRepository.save(admin);
+//        userRepository.save(user);
+//    }
 }
